@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "yl+6U0oiLkt1ql6gnabJL767PS4A7xH2+2tSvu/amDLqzTrlq8D+B11o8/8hvg+E7aducGmhLkb0mNOKcWjrMw==",
+  "success": true,
+  "projectFilePath": "/home/ssb/Documents/backup/Cloud/Learning/blogWrk/lang-perf/cs-app/cs-app.csproj",
+  "expectedPackageFiles": [
+    "/home/ssb/.nuget/packages/microsoft.aspnetcore.openapi/7.0.2/microsoft.aspnetcore.openapi.7.0.2.nupkg.sha512",
+    "/home/ssb/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/home/ssb/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.9/microsoft.aspnetcore.app.ref.7.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
