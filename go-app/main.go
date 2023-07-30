@@ -1,9 +1,7 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"github.com/savsgio/atreugo/v11"
 )
 
 type Device struct {
@@ -13,13 +11,15 @@ type Device struct {
 }
 
 func main() {
-	r := gin.Default()
+	config := atreugo.Config{
+		Addr: "0.0.0.0:8001",
+	}
+	r := atreugo.New(config)
 	r.GET("/api/devices", getDevices)
 	r.POST("/api/devices", createDevice)
-	r.Run(":8001")
 }
 
-func getDevices(c *gin.Context) {
+func getDevices(c *atreugo.RequestCtx) {
 	dvs := []Device{
 		{1, "5F-33-CC-1F-43-82", "2.1.6"},
 		{2, "EF-2B-C4-F5-D6-34", "2.1.6"},
@@ -28,12 +28,12 @@ func getDevices(c *gin.Context) {
 	c.JSON(http.StatusOK, dvs)
 }
 
-func createDevice(c *gin.Context) {
+func createDevice(c *atreugo.RequestCtx) {
 	number := 40
 
 	fib := fibonacci(number)
 
-	c.JSON(http.StatusCreated, gin.H{"fib": fib})
+	c.JSON(http.StatusCreated, atreugo.H{"fib": fib})
 }
 
 func fibonacci(n int) int {
