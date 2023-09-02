@@ -130,6 +130,21 @@
                 }
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/.*cpp.*/"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
           }
         ]
       },
@@ -272,6 +287,21 @@
                 }
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/.*cpp.*/"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
           }
         ]
       },
@@ -324,11 +354,15 @@
           "selected": true,
           "text": [
             "go-app",
-            "rust-app"
+            "rust-app",
+            "cs-app",
+            "cpp-app"
           ],
           "value": [
             "go-app",
-            "rust-app"
+            "rust-app",
+            "cs-app",
+            "cpp-app"
           ]
         },
         "datasource": {

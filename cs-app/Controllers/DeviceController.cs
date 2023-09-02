@@ -6,6 +6,7 @@ namespace cs_app.Controllers
     [ApiController]
     public class DeviceController : ControllerBase
     {
+        readonly Random rand = new();
         [HttpGet]
         public ActionResult<IEnumerable<Device>> GetDevices()
         {
@@ -21,7 +22,7 @@ namespace cs_app.Controllers
         [HttpPost]
         public ActionResult<string> CreateDevice()
         {
-            int number = 40;
+            int number = rand.Next(5, 40);
             int fib = Fibonacci(number);
             string location = $"/api/devices/{fib}";
             return Created(location, location);

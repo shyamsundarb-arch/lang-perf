@@ -1,4 +1,4 @@
-FROM amd64/rust:1.65.0-bullseye as build
+FROM amd64/rust:1.71.0-bullseye as build
 
 WORKDIR /app
 

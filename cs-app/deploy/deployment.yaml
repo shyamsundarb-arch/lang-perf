@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: cs-app
-        image: youraccount.dkr.ecr.us-east-1.amazonaws.com/cs-app:0.3
+        image: youraccount.dkr.ecr.ap-south-1.amazonaws.com/cs-app:0.3
         ports:
         - name: http
           containerPort: 8002
@@ -43,4 +43,5 @@ spec:
                   - go-app
                   - rust-app
                   - cs-app
+                  - cpp-app
               topologyKey: topology.kubernetes.io/zone

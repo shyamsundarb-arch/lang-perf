@@ -2325,7 +2325,7 @@ spec:
                           See https://prometheus.io/docs/alerting/latest/configuration/#sns_configs
                         properties:
                           apiURL:
-                            description: The SNS API URL i.e. https://sns.us-east-2.amazonaws.com.
+                            description: The SNS API URL i.e. https://sns.ap-south-2.amazonaws.com.
                               If not specified, the SNS API URL from the SNS SDK will
                               be used.
                             type: string
@@ -2764,7 +2764,7 @@ spec:
                               topic_arn or PhoneNumber.
                             type: string
                           topicARN:
-                            description: SNS topic ARN, i.e. arn:aws:sns:us-east-2:698519295917:My-Topic
+                            description: SNS topic ARN, i.e. arn:aws:sns:ap-south-2:698519295917:My-Topic
                               If you don't specify this value, you must specify a
                               value for the PhoneNumber or TargetARN.
                             type: string

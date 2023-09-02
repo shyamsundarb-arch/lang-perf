@@ -7,11 +7,11 @@ WORKDIR /src
 # Copy all the source code files to the image
 COPY . .
 
-# Build the API using the dotnet CLI
-RUN dotnet build cs-app.csproj -c Release
+# Create a folder for the app
+RUN mkdir /app
 
 # Publish the API using the dotnet CLI
-RUN dotnet publish cs-app.csproj -c Release -o /app
+RUN dotnet publish -c Release -o /app
 
 # Use the latest LTS version of the .NET Core runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine
@@ -27,6 +27,6 @@ ENV ASPNETCORE_URLS="http://0.0.0.0:8002"
 EXPOSE 8002
 
 # Set the startup command to run the API
-CMD ["dotnet", "cs-app.dll"]
+CMD ["./cs-app"]
 
 

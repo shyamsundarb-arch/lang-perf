@@ -1,5 +1,6 @@
 use actix_web::{web, App, HttpResponse, HttpServer};
 use serde::{Serialize, Deserialize};
+use rand::Rng;
 
 #[derive(Serialize, Deserialize)]
 struct Device {
@@ -26,7 +27,7 @@ async fn get_devices() -> HttpResponse {
 }
 
 async fn create_device() -> HttpResponse {
-    let number = 40;
+    let number = rand::thread_rng().gen_range(5..=40);
 
     let fib = fibonacci(number);
     let location = format!("/devices/{}", fib);
