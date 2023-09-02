@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpp-app
+  namespace: staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpp-app
+  template:
+    metadata:
+      labels:
+        app: cpp-app
+    spec:
+      containers:
+      - name: cpp-app
+        image: youraccount.dkr.ecr.ap-south-1.amazonaws.com/cpp-app:0.3
+        ports:
+        - name: http
+          containerPort: 8003
+        resources:
+          requests:
+            memory: 512Mi
+            cpu: 500m
+          limits:
+            memory: 1024Mi
+            cpu: 1000m
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - go-app
+                  - rust-app
+                  - cs-app
+                  - cpp-app
+              topologyKey: topology.kubernetes.io/zone
